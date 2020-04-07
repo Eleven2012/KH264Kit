@@ -8,7 +8,12 @@
 
 #import "KVideoCapture.h"
 
-@interface KVideoCapture()<AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
+
+
+@interface KVideoCapture()<AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
+    //视频捕获类型
+    KVideoCaptureType captureType;
+}
 
 /// 是否正在进行
 @property(nonatomic, assign) BOOL isRunning;
@@ -56,5 +61,88 @@
 
 
 @implementation KVideoCapture
+
+- (instancetype)initWithType:(KVideoCaptureType)type {
+    self = [super init];
+    if (self) {
+        captureType = type;
+    }
+    return self;
+}
+
+#pragma mark - 对外接口
+
+/// 开始捕获
+/// @param resultHandler 捕获数据回调
+/// @param errorHandler 错误回调
+- (void)startWithResult:(KVideoCaptureResultHandler)resultHandler error:(KErrorHandler)errorHandler {
+    
+}
+
+/// 停止捕获
+- (void)stop {
+    
+}
+
+#pragma mark - 初始化音视频会话
+
+/// 初始化音频会话相关服务
+- (void) setupAudioSession {
+    
+}
+
+/// 初始化视频会话相关服务
+- (void) setupVideoSession {
+    
+}
+
+
+#pragma mark - 辅助函数
+
+/// 准备捕获
+- (void) prepareCapture {
+    [self prepareWithPreviewSize:CGSizeZero];
+}
+
+/// 准备捕获音视频
+/// @param size 预览窗口大小
+- (void) prepareWithPreviewSize:(CGSize)size {
+    _prelayerSize = size;
+    
+    switch (captureType) {
+        case KVideoCaptureTypeAudio://捕获音频
+            [self setupAudioSession];
+            break;
+        case KVideoCaptureTypeVideo://捕获视频
+            [self setupVideoSession];
+            break;
+        case KVideoCaptureTypeAll://捕获音频和视频
+            [self setupAudioSession];
+            [self setupAudioSession];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+/// 切换前后摄像头
+- (void) switchCamera {
+    [self.captureSession beginConfiguration];
+    //先移除之前的设备
+    [self.captureSession removeInput:self.videoInputDevice];
+    if ([self.videoInputDevice isEqual:self.frontCamera]) {
+        //如果是前置摄像头，则切换为后置摄像头
+        self.videoInputDevice = self.backCamera;
+    } else {
+        //如果是后置摄像头，则切换当前摄像头为前置摄像头
+        self.videoInputDevice = self.frontCamera;
+    }
+    //将摄像头重新添加到会话
+    [self.captureSession addInput:self.videoInputDevice];
+    //提交配置,让新的配置生效
+    [self.captureSession commitConfiguration];
+}
 
 @end
