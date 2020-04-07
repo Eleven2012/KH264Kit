@@ -10,6 +10,10 @@
 		A563CD43243C651600BE9365 /* KH264Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A563CD39243C651600BE9365 /* KH264Kit.framework */; };
 		A563CD48243C651600BE9365 /* KH264KitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A563CD47243C651600BE9365 /* KH264KitTests.m */; };
 		A563CD4A243C651600BE9365 /* KH264Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = A563CD3C243C651600BE9365 /* KH264Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A563CD56243C68A900BE9365 /* KVideoCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = A563CD54243C68A900BE9365 /* KVideoCapture.h */; };
+		A563CD57243C68A900BE9365 /* KVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = A563CD55243C68A900BE9365 /* KVideoCapture.m */; };
+		A563CD5A243C6B2800BE9365 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A563CD59243C6B2800BE9365 /* UIKit.framework */; };
+		A563CD5C243C6B3000BE9365 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A563CD5B243C6B3000BE9365 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,11 @@
 		A563CD42243C651600BE9365 /* KH264KitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KH264KitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A563CD47243C651600BE9365 /* KH264KitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KH264KitTests.m; sourceTree = "<group>"; };
 		A563CD49243C651600BE9365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A563CD54243C68A900BE9365 /* KVideoCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVideoCapture.h; sourceTree = "<group>"; };
+		A563CD55243C68A900BE9365 /* KVideoCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVideoCapture.m; sourceTree = "<group>"; };
+		A563CD59243C6B2800BE9365 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A563CD5B243C6B3000BE9365 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		A563CD5D243C71B100BE9365 /* KTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A563CD5C243C6B3000BE9365 /* AVFoundation.framework in Frameworks */,
+				A563CD5A243C6B2800BE9365 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +67,7 @@
 				A563CD3B243C651600BE9365 /* KH264Kit */,
 				A563CD46243C651600BE9365 /* KH264KitTests */,
 				A563CD3A243C651600BE9365 /* Products */,
+				A563CD58243C6B2800BE9365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +83,7 @@
 		A563CD3B243C651600BE9365 /* KH264Kit */ = {
 			isa = PBXGroup;
 			children = (
+				A563CD53243C684400BE9365 /* Src */,
 				A563CD3C243C651600BE9365 /* KH264Kit.h */,
 				A563CD3D243C651600BE9365 /* Info.plist */,
 			);
@@ -86,6 +99,25 @@
 			path = KH264KitTests;
 			sourceTree = "<group>";
 		};
+		A563CD53243C684400BE9365 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				A563CD54243C68A900BE9365 /* KVideoCapture.h */,
+				A563CD55243C68A900BE9365 /* KVideoCapture.m */,
+				A563CD5D243C71B100BE9365 /* KTypes.h */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		A563CD58243C6B2800BE9365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A563CD5B243C6B3000BE9365 /* AVFoundation.framework */,
+				A563CD59243C6B2800BE9365 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A563CD4A243C651600BE9365 /* KH264Kit.h in Headers */,
+				A563CD56243C68A900BE9365 /* KVideoCapture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A563CD57243C68A900BE9365 /* KVideoCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +377,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KH264Kit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,6 +401,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KH264Kit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
