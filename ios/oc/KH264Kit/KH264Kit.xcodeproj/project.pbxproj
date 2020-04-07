@@ -14,6 +14,8 @@
 		A563CD57243C68A900BE9365 /* KVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = A563CD55243C68A900BE9365 /* KVideoCapture.m */; };
 		A563CD5A243C6B2800BE9365 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A563CD59243C6B2800BE9365 /* UIKit.framework */; };
 		A563CD5C243C6B3000BE9365 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A563CD5B243C6B3000BE9365 /* AVFoundation.framework */; };
+		A563CD60243C790A00BE9365 /* KError.h in Headers */ = {isa = PBXBuildFile; fileRef = A563CD5E243C790A00BE9365 /* KError.h */; };
+		A563CD61243C790A00BE9365 /* KError.m in Sources */ = {isa = PBXBuildFile; fileRef = A563CD5F243C790A00BE9365 /* KError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,9 @@
 		A563CD55243C68A900BE9365 /* KVideoCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVideoCapture.m; sourceTree = "<group>"; };
 		A563CD59243C6B2800BE9365 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A563CD5B243C6B3000BE9365 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		A563CD5D243C71B100BE9365 /* KTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTypes.h; sourceTree = "<group>"; };
+		A563CD5D243C71B100BE9365 /* KDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KDefines.h; sourceTree = "<group>"; };
+		A563CD5E243C790A00BE9365 /* KError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KError.h; sourceTree = "<group>"; };
+		A563CD5F243C790A00BE9365 /* KError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,9 @@
 			children = (
 				A563CD54243C68A900BE9365 /* KVideoCapture.h */,
 				A563CD55243C68A900BE9365 /* KVideoCapture.m */,
-				A563CD5D243C71B100BE9365 /* KTypes.h */,
+				A563CD5D243C71B100BE9365 /* KDefines.h */,
+				A563CD5E243C790A00BE9365 /* KError.h */,
+				A563CD5F243C790A00BE9365 /* KError.m */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A563CD4A243C651600BE9365 /* KH264Kit.h in Headers */,
+				A563CD60243C790A00BE9365 /* KError.h in Headers */,
 				A563CD56243C68A900BE9365 /* KVideoCapture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A563CD61243C790A00BE9365 /* KError.m in Sources */,
 				A563CD57243C68A900BE9365 /* KVideoCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
